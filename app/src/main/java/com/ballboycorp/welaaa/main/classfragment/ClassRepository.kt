@@ -1,6 +1,7 @@
 package com.ballboycorp.welaaa.main.classfragment
 
 import android.content.Context
+import com.ballboycorp.welaaa.main.classfragment.model.Series
 import com.ballboycorp.welaaa.main.model.Banner
 import com.ballboycorp.welaaa.network.WelaaaService
 import com.ballboycorp.welaaa.room.AppDatabase
@@ -31,6 +32,11 @@ class ClassRepository (private val context: Context) {
     private fun downloadBanners(): Observable<List<Banner>>{
         return getWelaaaService().getBanners()
                 .doOnNext { getAppDatabase().bannerDao().insertReplace(it) }
+    }
+
+    fun getPremiumClasses(): Observable<List<Series>> {
+        return getWelaaaService().getPremiumClasses()
+                .observeOn(AndroidSchedulers.mainThread())
     }
 
     private fun getAppDatabase() = AppDatabase.getInstance(context)

@@ -38,8 +38,6 @@ class ClassFirstViewPagerAdapter(private val context: Context) : PagerAdapter() 
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         val view = layoutInflater.inflate(R.layout.class_first_vp_item, container, false)
-        val mDefaultBackground = context.resources.getDrawable(R.drawable.src_images_bgmy)
-
         Glide.with(context).load(banners[position].images!!.defaultUrl)
                 .into(view.class_first_vp_item_thumb)
         container.addView(view)

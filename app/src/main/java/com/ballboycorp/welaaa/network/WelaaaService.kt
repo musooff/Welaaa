@@ -1,5 +1,6 @@
 package com.ballboycorp.welaaa.network
 
+import com.ballboycorp.welaaa.main.classfragment.model.Series
 import com.ballboycorp.welaaa.main.model.Banner
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import io.reactivex.Observable
@@ -13,7 +14,7 @@ import retrofit2.converter.jackson.JacksonConverterFactory
 
 class WelaaaService {
     companion object {
-        private const val SERVER_BASE_URL = "https://api-prod.welaaa.com/api/v1.0/cms/main/"
+        private const val SERVER_BASE_URL = "https://api-prod.welaaa.com/api/"
     }
 
     private fun startService(): WelaaaAPI {
@@ -31,5 +32,9 @@ class WelaaaService {
 
     fun getBanners() : Observable<List<Banner>> {
         return startService().getBanners()
+    }
+
+    fun getPremiumClasses(): Observable<List<Series>>{
+        return startService().getVideoSeries()
     }
 }

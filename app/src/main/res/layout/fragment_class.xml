@@ -58,8 +58,62 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:textSize="12sp"
-                android:visibility="gone"
+                android:visibility="invisible"
                 android:text="@string/welaaa_series_button"/>
+            <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/class_recommend">
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:gravity="center_horizontal"
+                android:text="@string/welaaa_premium"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/colorWhiteDark"
+                android:textStyle="bold"
+                android:gravity="center_horizontal"
+                android:text="@string/welaaa_premium_sub_text"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:textSize="12sp"
+                android:visibility="invisible"
+                android:text="@string/welaaa_series_button"/>
+
+            <com.google.android.material.tabs.TabLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/class_premium_tl"
+                app:tabTextColor="@color/blackLight"
+                app:tabIndicatorColor="@color/colorPrimaryDark"
+                app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+                app:tabIndicatorHeight="2dp">
+            </com.google.android.material.tabs.TabLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="새로 나온 클래스"
+                android:textColor="@color/black"
+                android:layout_margin="10dp"
+                android:textStyle="bold"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/class_premium_rv">
+            </androidx.recyclerview.widget.RecyclerView>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
