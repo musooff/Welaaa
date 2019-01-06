@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="@string/home" />
+        <item
+            android:id="@+id/nav_class"
+            android:icon="@drawable/ic_class_black_24dp"
+            android:title="@string/nav_class" />
+        <item
+            android:id="@+id/nav_audiobook"
+            android:icon="@drawable/ic_audiotrack_black_24dp"
+            android:title="@string/nav_audiobook" />
+        <item
+            android:id="@+id/nav_my"
+            android:icon="@drawable/ic_person_black_24dp"
+            android:title="@string/nav_my" />
+
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/nav_inquiries" />
+        </menu>
+    </item>
+
+</menu>
