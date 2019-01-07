@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.ballboycorp.welaaa.R
 import com.ballboycorp.welaaa.utils.DisplayUtils
@@ -43,7 +44,7 @@ class MyActivity : AppCompatActivity(){
                 }
                 if (scrollRange + verticalOffset == 0) {
                     my_collapsing.title = getString(R.string.title_mywelaaa)
-                    isShow = true;
+                    isShow = true
                 } else if(isShow) {
                     my_collapsing.title = " "
                     isShow = false
@@ -56,5 +57,15 @@ class MyActivity : AppCompatActivity(){
         menu.clear()
         menuInflater.inflate(R.menu.my, menu)
         return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressed()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

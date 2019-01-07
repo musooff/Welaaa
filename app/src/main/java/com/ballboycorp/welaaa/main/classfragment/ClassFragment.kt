@@ -9,14 +9,8 @@ import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ballboycorp.welaaa.R
-import com.ballboycorp.welaaa.main.model.Banner
-import com.ballboycorp.welaaa.main.model.Image
-import com.ballboycorp.welaaa.room.AppDatabase
 import com.ballboycorp.welaaa.utils.Ln
 import com.bumptech.glide.Glide
-import io.reactivex.Completable
-import io.reactivex.Scheduler
-import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_class.*
 import kotlinx.android.synthetic.main.fragment_class.view.*
 
@@ -54,7 +48,7 @@ class ClassFragment : Fragment() {
 
         repository.getPremiumClasses()
                 .subscribe({
-                    classPremiumAdapter.submitList(it[3].item)
+                    classPremiumAdapter.submitList(it)
                 },{
                     Ln.e(it)
                 })

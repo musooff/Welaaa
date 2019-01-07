@@ -4,8 +4,12 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.ballboycorp.welaaa.main.classfragment.model.Item
+import com.ballboycorp.welaaa.main.classfragment.model.Series
 import com.ballboycorp.welaaa.main.model.Banner
 import com.ballboycorp.welaaa.room.dao.BannerDao
+import com.ballboycorp.welaaa.room.dao.ItemDao
+import com.ballboycorp.welaaa.room.dao.SeriesDao
 
 /**
  * Created by musooff on 01/01/2019.
@@ -13,7 +17,9 @@ import com.ballboycorp.welaaa.room.dao.BannerDao
 
 @Database(
         entities = [
-            Banner::class
+            Banner::class,
+            Series::class,
+            Item::class
         ],
         version = 1,
         exportSchema = false
@@ -21,6 +27,8 @@ import com.ballboycorp.welaaa.room.dao.BannerDao
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun bannerDao(): BannerDao
+    abstract fun itemDao(): ItemDao
+    abstract fun seriesDao(): SeriesDao
 
     companion object {
 

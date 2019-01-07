@@ -13,10 +13,12 @@ import com.fasterxml.jackson.annotation.JsonProperty
 class Banner {
     @PrimaryKey
     var id: Int = 0
+    var align: Int = 0
     @Embedded
     var images: Image?  = null
 }
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 class Image {
     @JsonProperty(value = "default")
     var defaultUrl: String? = null

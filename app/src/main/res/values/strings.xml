@@ -22,6 +22,7 @@
     <string name="welaaa_series_button">전체보기</string>
     <string name="welaaa_premium">윌라 프리미엄 클래스</string>
     <string name="welaaa_premium_sub_text">당신이 커리에 성공과 행복한 일상을 위한 교육</string>
+    <string name="title_classviewer">ClassViewer</string>
 
     <string-array name="recommend_urls">
         <item>http://static.welaaa.co.kr/static/cbanner/series_036.jpg</item>

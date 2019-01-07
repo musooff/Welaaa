@@ -26,6 +26,8 @@
         </activity>
         <activity android:name=".my.MyActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".classviewer.ClassViewerActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

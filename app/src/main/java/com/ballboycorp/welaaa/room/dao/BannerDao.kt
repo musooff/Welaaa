@@ -12,6 +12,9 @@ import io.reactivex.Single
 @Dao
 interface BannerDao : BaseDao<Banner> {
 
-    @Query("SELECT * FROM Banner")
+    @Query("SELECT * FROM Banner ORDER BY align DESC")
     fun getBanners(): Single<List<Banner>>
+
+    @Query("DELETE FROM Banner")
+    fun deleteBanners()
 }

@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ballboycorp.welaaa.R
+import com.ballboycorp.welaaa.classviewer.ClassViewerActivity
 import com.ballboycorp.welaaa.main.classfragment.model.Item
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.premium_item.view.*
@@ -38,7 +39,11 @@ class ClassPremiumAdapter: RecyclerView.Adapter<ClassPremiumAdapter.ClassPremium
         fun bind(item: Item) {
             view.premium_title.text = item.headline
             Glide.with(view.context).load(item.images!!.wide).into(view.premium_thumb)
-            view.premium_thumb_title.text = item.teacher!!.headline
+            view.premium_thumb_title.text = item.teacher?.headline
+
+            view.setOnClickListener {
+                ClassViewerActivity.newIntent(view.context, item.id, item.headline!!)
+            }
         }
 
     }
